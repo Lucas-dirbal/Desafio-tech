@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REset</title>
+    <link rel="icon" type="image/png" href="RE.png">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let nome = localStorage.getItem('nomeUsuario');
+            if (!nome) {
+                nome = prompt("Qual seu nome?");
+                if (nome) {
+                    localStorage.setItem('nomeUsuario', nome);
+                } else {
+                    nome = "Visitante";
+                }
+            }
+            const titulo = document.getElementById("titulo-bemvindo");
+            if (titulo) {
+                titulo.textContent = `Seja bem-vindo, ${nome}!!`;
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="RE.png" alt="Logo REset" class="logo-header">
+            <h1 style="display:inline; vertical-align:middle;">REset</h1>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2 id="titulo-bemvindo">Bem-vindo ao Meu Site Incrível!</h2>
+                <p>Transformando ideias em soluções digitais.</p>
+                <a href="#contato" class="btn">Fale Conosco</a>
+            </div>
+        </section>
+        <section id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>Somos uma equipe dedicada à reciclagem e ao descarte correto do lixo, promovendo sustentabilidade e consciência ambiental.</p>
+            <ul>
+                <li>Missão: Inovar sempre em prol do meio ambiente</li>
+                <li>Visão: Ser referência em reciclagem e sustentabilidade</li>
+                <li>Valores: Ética, compromisso, criatividade e respeito à natureza</li>
+            </ul>
+        </section>
+        <section id="servicos">
+            <h2>Serviços</h2>
+            <div class="servicos-lista">
+                <div class="servico">
+                    <h3>Coleta Seletiva</h3>
+                    <p>Recolhimento de resíduos recicláveis em pontos estratégicos.</p>
+                </div>
+                <div class="servico">
+                    <h3>Educação Ambiental</h3>
+                    <p>Palestras e oficinas sobre reciclagem e descarte correto.</p>
+                </div>
+                <div class="servico">
+                    <h3>Consultoria Sustentável</h3>
+                    <p>Orientação para empresas e condomínios sobre práticas ecológicas.</p>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <h2>Portfólio</h2>
+            <div class="portfolio-galeria">
+                <figure>
+                    <img src="https://via.placeholder.com/200x120" alt="Projeto 1">
+                    <figcaption>Projeto 1</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/200x120" alt="Projeto 2">
+                    <figcaption>Projeto 2</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/200x120" alt="Projeto 3">
+                    <figcaption>Projeto 3</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section id="contato">
+            <h2>Contato</h2>
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="mapa-container">
+                <h3>Nos encontre aqui:</h3>
+                <iframe
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-46.693419%2C-23.568704%2C-46.623421%2C-23.538704&amp;layer=mapnik"
+                    style="border:1px solid #ccc; width:100%; height:300px; border-radius:10px; margin-top:1rem;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Meu Site. Todos os direitos reservados.</p>
+            <ul class="social">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">GitHub</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
